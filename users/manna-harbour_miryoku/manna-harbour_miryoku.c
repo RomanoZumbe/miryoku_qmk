@@ -101,12 +101,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
-    switch (keycode) {
-        case CYCLE:
-            register_code(KC_LSFT);
-            register_code(DE_4);
-            break;
-    }
+  switch (keycode) {
+    case CYCLE:
+      break;
+      if ((keyboard_report->mods & MOD_BIT (KC_LSFT)) || (keyboard_report->mods & MOD_BIT (KC_RSFT))) {
+        // Shift pressed -> < (Shift+,)
+        if (record->event.pressed)
+        {
+          register_code(KC_LSFT);
+          register_code(DE_SS);
+        }
+      else
+        {
+
+          register_code(KC_LSFT);
+          register_code(DE_SS);
+        }
+      } else {
+        // No shift -> ( (Shift+9)
+        if (record->event.pressed)
+        {
+          register_code(KC_LSFT);
+          register_code(DE_7);
+        }
+      else
+        {
+          unregister_code(KC_LSFT);
+          unregister_code(DE_7);
+        }
+      }
+  }
 
     // this uses less memory than returning in each case.
     return keycode < SAFE_RANGE;
