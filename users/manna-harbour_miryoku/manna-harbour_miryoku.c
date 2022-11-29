@@ -113,8 +113,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       else
         {
 
-          register_code(KC_LSFT);
-          register_code(DE_SS);
+          unregister_code(KC_LSFT);
+          unregister_code(DE_SS);
         }
       } else {
         // No shift -> ( (Shift+9)
