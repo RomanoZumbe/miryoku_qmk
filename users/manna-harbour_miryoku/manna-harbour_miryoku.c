@@ -96,10 +96,10 @@ combo_t key_combos[COMBO_COUNT] = {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    // handling this once instead of in each keycode uses less program memory.
-    if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
-        return false;
-    }
+  // handling this once instead of in each keycode uses less program memory.
+  if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
+    return false;
+  }
 
   switch (keycode) {
     case CYCLE:
@@ -108,31 +108,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed)
         {
           register_code(KC_LSFT);
-          register_code(DE_SS);
-        }
-      else
-        {
-
+          tap_code(DE_SS);
           unregister_code(KC_LSFT);
-          unregister_code(DE_SS);
-        }
-      } else {
+        } 
+      }else {
         // No shift -> ( (Shift+9)
         if (record->event.pressed)
         {
           register_code(KC_LSFT);
-          register_code(DE_7);
-        }
-      else
-        {
+          tap_code(DE_7);
           unregister_code(KC_LSFT);
-          unregister_code(DE_7);
         }
       }
-    
+
       break;
   }
 
-    // this uses less memory than returning in each case.
-    return keycode < SAFE_RANGE;
+  // this uses less memory than returning in each case.
+  return keycode < SAFE_RANGE;
 };
