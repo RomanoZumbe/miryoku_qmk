@@ -53,6 +53,7 @@ MIRYOKU_LAYER_LIST
 // shift functions
 
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CAPSWRD, KC_CAPS);
+const key_override_t slsh_ques_override = ko_make_basic(MOD_MASK_SHIFT, DE_SLSH, DE_QUES);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
