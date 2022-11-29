@@ -100,27 +100,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
     return false;
   }
+static uint16_t mods_shift = get_mods() & MOD_MASK_SHIFT; //track shift 
 
   switch (keycode) {
     case CYCLE:
-      if ((keyboard_report->mods & MOD_BIT (KC_LSFT)) || (keyboard_report->mods & MOD_BIT (KC_RSFT))) {
-        // Shift pressed -> < (Shift+,)
-        if (record->event.pressed)
-        {
-          register_code(KC_LSFT);
-          tap_code(DE_SS);
-          unregister_code(KC_LSFT);
-        } 
-      }else {
-        // No shift -> ( (Shift+9)
-        if (record->event.pressed)
-        {
-          register_code(KC_LSFT);
-          tap_code(DE_7);
-          unregister_code(KC_LSFT);
-        }
-      }
-
+      if (record->event.pressed && MOD_MASK_SHIFT) {
+        unregister_mods(mods_shift); //strictly not necessary  since " is also shifted, but shift may interfere with other keycodes      
+        tap_code16(DE_QUES);
+        register_mods(mods_shift);
+      } else if (record->event.pressed) {
+        tap_code16(DE_SLSH);
+      } return false;
       break;
   }
 
