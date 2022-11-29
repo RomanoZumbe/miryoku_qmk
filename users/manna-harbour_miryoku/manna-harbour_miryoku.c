@@ -103,7 +103,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   switch (keycode) {
     case CYCLE:
-      break;
       if ((keyboard_report->mods & MOD_BIT (KC_LSFT)) || (keyboard_report->mods & MOD_BIT (KC_RSFT))) {
         // Shift pressed -> < (Shift+,)
         if (record->event.pressed)
@@ -130,6 +129,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           unregister_code(DE_7);
         }
       }
+    
+      break;
   }
 
     // this uses less memory than returning in each case.
