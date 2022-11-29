@@ -5,6 +5,7 @@
 
 #include QMK_KEYBOARD_H
 
+#include "../../quantum/keymap_extras/keymap_german.h"
 #include "manna-harbour_miryoku.h"
 
 
@@ -57,6 +58,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
     NULL
 };
+
 
 
 // thumb combos
