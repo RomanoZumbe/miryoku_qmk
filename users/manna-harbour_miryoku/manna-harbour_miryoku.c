@@ -103,7 +103,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     switch (keycode) {
         case CYCLE:
-            register_code(DE_DLR);
+            register_code(KC_LSFT);
+            register_code(DE_4);
             break;
     }
 
