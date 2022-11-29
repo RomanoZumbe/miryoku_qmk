@@ -100,14 +100,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
     return false;
   }
-// static uint16_t mods_shift = get_mods() & MOD_MASK_SHIFT; //track shift 
+uint16_t mods_shift = get_mods() & MOD_MASK_SHIFT; //track shift 
 
   switch (keycode) {
     case CYCLE:
       if (record->event.pressed && MOD_MASK_SHIFT) {
-        // unregister_mods(mods_shift); //strictly not necessary  since " is also shifted, but shift may interfere with other keycodes      
+        unregister_mods(mods_shift); //strictly not necessary  since " is also shifted, but shift may interfere with other keycodes      
         tap_code16(DE_QUES);
-        // register_mods(mods_shift);
+        register_mods(mods_shift);
       } else if (record->event.pressed) {
         tap_code16(DE_SLSH);
       } return false;
