@@ -57,7 +57,7 @@ const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CAPSW
 const key_override_t slsh_ques_override = ko_make_basic(MOD_MASK_SHIFT, DE_SLSH, DE_QUES);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &capsword_key_override,
+    &slsh_ques_override ,
     NULL
 };
 
@@ -95,25 +95,25 @@ combo_t key_combos[COMBO_COUNT] = {
 #endif
 
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  // handling this once instead of in each keycode uses less program memory.
-  if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
-    return false;
-  }
-uint16_t mods_shift = get_mods() & MOD_MASK_SHIFT; //track shift 
-
-  switch (keycode) {
-    case CYCLE:
-      if (record->event.pressed && MOD_MASK_SHIFT) {
-        unregister_mods(mods_shift); //strictly not necessary  since " is also shifted, but shift may interfere with other keycodes      
-        tap_code16(DE_QUES);
-        register_mods(mods_shift);
-      } else if (record->event.pressed) {
-        tap_code16(DE_SLSH);
-      } return false;
-      break;
-  }
-
-  // this uses less memory than returning in each case.
-  return keycode < SAFE_RANGE;
-};
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//   // handling this once instead of in each keycode uses less program memory.
+//   if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
+//     return false;
+//   }
+// uint16_t mods_shift = get_mods() & MOD_MASK_SHIFT; //track shift 
+//
+//   switch (keycode) {
+//     case CYCLE:
+//       if (record->event.pressed && MOD_MASK_SHIFT) {
+//         unregister_mods(mods_shift); //strictly not necessary  since " is also shifted, but shift may interfere with other keycodes      
+//         tap_code16(DE_QUES);
+//         register_mods(mods_shift);
+//       } else if (record->event.pressed) {
+//         tap_code16(DE_SLSH);
+//       } return false;
+//       break;
+//   }
+//
+//   // this uses less memory than returning in each case.
+//   return keycode < SAFE_RANGE;
+// };
