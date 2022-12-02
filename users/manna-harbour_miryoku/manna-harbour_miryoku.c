@@ -133,7 +133,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 //   }
 //
 //   switch (keycode) {
-//     case SS_CRYPT:
+//     case :
 //       if (record->event.pressed) {
 //         SEND_STRING("3NV1jY~-PO@n70J=");
 //       }
@@ -144,3 +144,14 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 //   // this uses less memory than returning in each case.
 //   return keycode < SAFE_RANGE;
 // };
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SS_CRYPT:
+            if (record->event.pressed) {
+                SEND_STRING("3NV1jY~-PO@n70J=");
+            }
+            return false;
+    }
+
+    return true;
+}
