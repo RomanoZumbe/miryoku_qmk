@@ -55,10 +55,19 @@ MIRYOKU_LAYER_LIST
 
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CAPSWRD, KC_CAPS);
 const key_override_t slsh_ques_override = ko_make_basic(MOD_MASK_SHIFT, DE_SLSH, DE_QUES);
+const key_override_t slsh_scln_coln = ko_make_basic(MOD_MASK_SHIFT,DE_SCLN, DE_COLN)
+const key_override_t slsh_comm_labk = ko_make_basic(MOD_MASK_SHIFT,DE_COMM, DE_LABK)
+const key_override_t slsh_dot_rabk = ko_make_basic(MOD_MASK_SHIFT,DE_DOT, DE_RABK)
+const key_override_t slsh_quot_dquo = ko_make_basic(MOD_MASK_SHIFT,DE_QUOT, DE_DQUO)
 
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &slsh_ques_override ,
-    NULL
+  &slsh_ques_override ,
+  &slsh_ques_override, 
+  &slsh_scln_coln, 
+  &slsh_comm_labk, 
+  &slsh_dot_rabk, 
+  &slsh_quot_dquo, 
+  NULL
 };
 
 
