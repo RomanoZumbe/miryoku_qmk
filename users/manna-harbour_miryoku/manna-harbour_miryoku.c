@@ -126,21 +126,21 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 #endif
 
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  // handling this once instead of in each keycode uses less program memory.
-  if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
-    return false;
-  }
-
-  switch (keycode) {
-    case SS_CRYPT:
-      if (record->event.pressed) {
-        SEND_STRING("3NV1jY~-PO@n70J=");
-      }
-      return false;
-      break;
-  }
-
-  // this uses less memory than returning in each case.
-  return keycode < SAFE_RANGE;
-};
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//   // handling this once instead of in each keycode uses less program memory.
+//   if ((keycode >= SAFE_RANGE) && !(record->event.pressed)) {
+//     return false;
+//   }
+//
+//   switch (keycode) {
+//     case SS_CRYPT:
+//       if (record->event.pressed) {
+//         SEND_STRING("3NV1jY~-PO@n70J=");
+//       }
+//       return false;
+//       break;
+//   }
+//
+//   // this uses less memory than returning in each case.
+//   return keycode < SAFE_RANGE;
+// };
