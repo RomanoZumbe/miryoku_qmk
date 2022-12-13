@@ -202,7 +202,7 @@ static void render_logo(void) {
   };
   
   char line[16][32]; 
-  char PROGMEM out[512];
+  static char PROGMEM out[512];
   for(int y=0;y<=15;y++)
     {
       for(int z=0;z<=31;z++)
