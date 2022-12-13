@@ -152,6 +152,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("3NV1jY~-PO@n70J=");
             }
             return false;
+        case SS_CIRC:
+            if (record->event.pressed) {
+                SEND_STRING("^");
+            }
+            return false;
     }
 
     return true;
