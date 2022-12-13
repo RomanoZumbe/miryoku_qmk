@@ -200,9 +200,27 @@ static void render_logo(void) {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
   };
+  
+  char PROGMEM line[16][32]; 
+  char Progmem out[512];
+  for(int y=0;y++;y<=15)
+    {
+      for(int z=0;z++;z<=31)
+        {
+          line[y][z]=qmk_logo[y+(z*16)];
+        }
+    }
+
+  for(int y=0;y++;y<=15)
+    {
+      for(int z=0;z++;z<=31)
+        {
+          out[y+(z*16)] = line[y][z];
+        }
+    }
 
     // oled_write_P(qmk_logo, false);
-  oled_write_raw_P(qmk_logo, sizeof(qmk_logo));
+  oled_write_raw_P(out, sizeof(out));
 }
 
 static void print_status_narrow(void) {
@@ -256,7 +274,8 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
-        print_status_narrow();
+        // print_status_narrow();
+        render_logo();
     } else {
         render_logo();
     }
