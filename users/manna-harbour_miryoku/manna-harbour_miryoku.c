@@ -200,16 +200,16 @@ static void print_status_narrow(void) {
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case MIRYOKU_ALTERNATIVES_BASE_QWERTZ:
+        case BASE:
             oled_write_P(PSTR("Base\n"), false);
             break;
-        case MIRYOKU_ALTERNATIVES_SYM:
+        case SYM:
             oled_write_P(PSTR("Sym"), false);
             break;
-        case MIRYOKU_ALTERNATIVES_NUM:
+        case NUM:
             oled_write_P(PSTR("Num"), false);
             break;
-        case MIRYOKU_ALTERNATIVES_NAV_VI:
+        case NAV:
             oled_write_P(PSTR("Nav\n"), false);
             break;
         default:
