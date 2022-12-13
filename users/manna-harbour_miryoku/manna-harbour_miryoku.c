@@ -200,16 +200,16 @@ static void print_status_narrow(void) {
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case BASE:
+        case U_BASE:
             oled_write_P(PSTR("Base\n"), false);
             break;
-        case SYM:
+        case U_SYM:
             oled_write_P(PSTR("Sym"), false);
             break;
-        case NUM:
+        case U_NUM:
             oled_write_P(PSTR("Num"), false);
             break;
-        case NAV:
+        case U_NAV:
             oled_write_P(PSTR("Nav\n"), false);
             break;
         default:
