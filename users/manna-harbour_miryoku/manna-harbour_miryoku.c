@@ -7,7 +7,7 @@
 #include "./localization/custom_keycodes.h"
 #include "../../quantum/keymap_extras/keymap_german.h"
 #include "manna-harbour_miryoku.h"
-#include "sendstring_german.h"
+#include "../../quantum/keymap_extras/sendstring_german.h"
 
 
 // Additional Features double tap guard
