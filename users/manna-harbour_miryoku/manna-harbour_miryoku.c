@@ -245,6 +245,7 @@ static void print_status_narrow(void) {
         default:
             oled_write_ln_P(PSTR("Undef\n"), false);
     }
+    oled_set_cursor(0, 4);
     render_logo();
 }
 
