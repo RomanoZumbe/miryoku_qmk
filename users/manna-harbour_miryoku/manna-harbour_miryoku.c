@@ -219,8 +219,9 @@ static void render_logo(void) {
         }
     }
 
+  static const char PROGMEM logo[] = out;
     // oled_write_P(qmk_logo, false);
-  oled_write_raw_P(out, sizeof(out));
+  oled_write_raw_P(logo, sizeof(logo));
 }
 
 // static void print_status_narrow(void) {
