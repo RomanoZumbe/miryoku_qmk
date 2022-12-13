@@ -201,15 +201,15 @@ static void render_logo(void) {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
   };
 
-    oled_write_P(qmk_logo, false);
-  // oled_write_raw_P(qmk_logo, sizeof(qmk_logo));
+    // oled_write_P(qmk_logo, false);
+  oled_write_raw_P(qmk_logo, sizeof(qmk_logo));
 }
 
 static void print_status_narrow(void) {
     // Print current mode
-    // oled_write_P(PSTR("\n\n"), false);
-    // oled_write_ln_P(PSTR("MODE"), false);
-    // oled_write_ln_P(PSTR(""), false);
+    oled_write_P(PSTR("\n\n"), false);
+    oled_write_ln_P(PSTR("MODE"), false);
+    oled_write_ln_P(PSTR(""), false);
     // if (keymap_config.swap_lctl_lgui) {
     //     oled_write_ln_P(PSTR("MAC"), false);
     // } else {
@@ -245,8 +245,6 @@ static void print_status_narrow(void) {
         default:
             oled_write_ln_P(PSTR("Undef\n"), false);
     }
-    oled_set_cursor(0, 4);
-    render_logo();
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
