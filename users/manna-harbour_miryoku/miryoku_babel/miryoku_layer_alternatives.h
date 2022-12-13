@@ -444,8 +444,8 @@ KC_ESC,            KC_ESC,           DE_CIRC,           KC_ESC,           SS_CRY
 KC_ESC,            KC_ESC,             KC_ESC,            KC_ESC
 
 #define MIRYOKU_ALTERNATIVES_MOUSE_VI \
-TD(U_TD_BOOT),     TD(U_TD_U_TAP),    DE_EURO,           TD(U_TD_U_BASE),   U_NA,              U_RDO,             DE_UDIA,             U_CPY,             DE_ODIA,             U_UND,             \
-DE_ADIA,           DE_SS,           KC_LCTL,             KC_LSFT,           U_NA,              KC_MS_L,           KC_MS_D,           KC_MS_U,           KC_MS_R,           U_NU,              \
+TD(U_TD_BOOT),     TD(U_TD_U_TAP),    DE_EURO,           TD(U_TD_U_BASE),   U_NA,              U_RDO,             DE_UDIA,           KC_MS_U,             DE_ODIA,             U_UND,             \
+DE_ADIA,           DE_SS,           KC_LCTL,             KC_LSFT,           U_NA,              U_NP,              KC_MS_L,           KC_MS_D,           KC_MS_R,           U_NU,              \
 U_NA,              KC_ALGR,           TD(U_TD_U_SYM),    TD(U_TD_U_MOUSE),  U_NA,              KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           U_NU,              \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_BTN2,           KC_BTN1,           KC_BTN3,           U_NP,              U_NP,\
 KC_1,              KC_2,             KC_3,             KC_4,             KC_5,             KC_6,             KC_7,             KC_8,             KC_9,             KC_0,\
