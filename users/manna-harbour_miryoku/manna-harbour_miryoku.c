@@ -201,8 +201,8 @@ static void render_logo(void) {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
   };
   
-  char PROGMEM line[16][32]; 
-  char Progmem out[512];
+  char line[16][32]; 
+  char out[512];
   for(int y=0;y++;y<=15)
     {
       for(int z=0;z++;z<=31)
