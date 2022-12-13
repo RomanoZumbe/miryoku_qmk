@@ -201,7 +201,8 @@ static void render_logo(void) {
     0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff
   };
 
-    oled_write_P(qmk_logo, false);
+    // oled_write_P(qmk_logo, false);
+  oled_write_raw_P(qmk_logo, sizeof(qmk_logo));
 }
 
 static void print_status_narrow(void) {

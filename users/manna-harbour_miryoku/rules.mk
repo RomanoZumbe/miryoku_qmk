@@ -9,7 +9,7 @@ TAP_DANCE_ENABLE = yes
 KEY_OVERRIDE_ENABLE = yes
 OLED_ENABLE = yes
 SEND_STRING_ENABLE = yes
-ENCODER_ENABLE = yes
+# ENCODER_ENABLE = yes
 
 INTROSPECTION_KEYMAP_C = manna-harbour_miryoku.c # keymaps
 
