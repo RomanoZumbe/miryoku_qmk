@@ -219,7 +219,7 @@ static void render_logo(void) {
   //       }
   //   }
 
-  static const char PROGMEM logo[] = out;
+  // static const char PROGMEM logo[] = out;
     // oled_write_P(qmk_logo, false);
   oled_write_raw_P(qmk_logo, sizeof(qmk_logo));
 }
