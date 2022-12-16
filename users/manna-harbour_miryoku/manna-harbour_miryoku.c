@@ -201,27 +201,27 @@ static void render_logo(void) {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
   };
   
-  // char line[16][32]; 
-  // static char PROGMEM out[512];
-  // for(int y=0;y<=15;y++)
-  //   {
-  //     for(int z=0;z<=31;z++)
-  //       {
-  //         line[y][z]=qmk_logo[y+(z*16)];
-  //       }
-  //   }
-  //
-  // for(int y=0;y<=15;y++)
-  //   {
-  //     for(int z=0;z<=31;z++)
-  //       {
-  //         out[y+(z*16)] = line[y][z];
-  //       }
-  //   }
+  char line[16][32]; 
+  static char PROGMEM out[512];
+  for(int y=0;y<=15;y++)
+    {
+      for(int z=0;z<=31;z++)
+        {
+          line[y][z]=qmk_logo[y+(z*16)];
+        }
+    }
+
+  for(int y=0;y<=15;y++)
+    {
+      for(int z=0;z<=31;z++)
+        {
+          out[y+(z*16)] = line[y][z];
+        }
+    }
 
   // static const char PROGMEM logo[] = out;
     // oled_write_P(qmk_logo, false);
-  oled_write_raw_P(qmk_logo, sizeof(qmk_logo));
+  oled_write_raw_P(out, sizeof(out));
 }
 
 // static void print_status_narrow(void) {
