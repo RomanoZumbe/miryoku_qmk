@@ -115,7 +115,6 @@ jobs:
             - name: Copy firmware
               run: |
                   cp *manna-harbour_miryoku* "${{ steps.inputs.outputs.artifact_dir }}"
-                  cp *uf2* "${{ steps.inputs.outputs.artifact_dir }}"
             - name: Archive artifacts
               uses: actions/upload-artifact@v3
               with:
